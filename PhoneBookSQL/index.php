@@ -51,6 +51,25 @@
 
             <input type="submit" value="Add" id="new-person-submit">
         </div>
+
+        <div class="database">
+            <h2 id="title">Manage database:</h2>
+
+            <div class="database-buttons">
+                <form action="bd.php">
+                    <input class="db-button" type="submit" value="Create database" id="create-database">
+                </form>
+
+                <form action="bd.php">
+                    <input class="db-button" type="submit" value="Delete database" id="delete-database">
+                </form>
+            </div>
+        </div>
+
+        <?php 
+        echo "223";
+        ?>
+
     </div>
 
 </body>
