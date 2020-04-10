@@ -14,8 +14,7 @@ let tableExample = {
 
     3: {
         'first_name': 'Mark',
-        'second_name': 'Filippov',
-        'number': '89992053903'
+        'second_name': 'Filippov', 'number': '89992053903'
     },
 
     4: {
@@ -27,13 +26,13 @@ let tableExample = {
 
 let refreshDOMTable = () => {
     let tableKeys = Object.keys(table);
-    let oldTableBody = document.getElementById('table-body-id');
-    let tableContainer = document.getElementById('table-container-id');
+    let oldTableBody = document.getElementById('table-body');
+    let tableContainer = document.getElementById('table-container');
 
     tableContainer.removeChild(oldTableBody);
 
     let newTableBody = document.createElement('span');
-    newTableBody.id = 'table-body-id';
+    newTableBody.id = 'table-body';
     tableContainer.appendChild(newTableBody);
 
     for (let i = 0; i < tableKeys.length; i++) {
@@ -92,11 +91,12 @@ let deletePersonFromTable = (id) => {
 let addPersonToTable = (first_name, second_name, number) => {
     if (first_name !== '' && second_name !== '' && number !== '') {
         let tableKeys = Object.keys(table);
-        table[tableKeys.length+1] = {
+        table[tableKeys.length + 1] = {
             'first_name': first_name,
             'second_name': second_name,
             'number': number
         };
+
         refreshDOMTable();
     }
 };
@@ -105,16 +105,18 @@ let init = () => {
         table = tableExample;
         let newPersonSubmitBtn = document.getElementById('new-person-submit');
         newPersonSubmitBtn.addEventListener('click', key => {
-            let newPersonFirstName = document.getElementById('new-first-name-id').value;
-            let newPersonSecondName = document.getElementById('new-second-name-id').value;
-            let newPersonNumber = document.getElementById('new-number-id').value;
+
+            let newPersonFirstName = document.getElementById('new-first-name').value;
+            let newPersonSecondName = document.getElementById('new-second-name').value;
+            let newPersonNumber = document.getElementById('new-number').value;
 
             addPersonToTable(newPersonFirstName, newPersonSecondName, newPersonNumber);
 
-            document.getElementById('new-first-name-id').value = '';
-            document.getElementById('new-second-name-id').value = '';
-            document.getElementById('new-number-id').value = '';
+            document.getElementById('new-first-name').value = '';
+            document.getElementById('new-second-name').value = '';
+            document.getElementById('new-number').value = '';
         });
+
         refreshDOMTable();
 };
 
