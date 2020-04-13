@@ -3,24 +3,24 @@ let table;
 let tableExample = {
     1: {
         'first_name': 'Alexander',
-        'second_name': 'Smirnov',
+        'last_name': 'Smirnov',
         'number': '89119727982'
     },
 
     2: {
         'first_name': 'Taya',
-        'second_name': 'Penskaya',
+        'last_name': 'Penskaya',
         'number': '89110938070'
     },
 
     3: {
         'first_name': 'Mark',
-        'second_name': 'Filippov', 'number': '89992053903'
+        'last_name': 'Filippov', 'number': '89992053903'
     },
 
     4: {
         'first_name': 'Maksim',
-        'second_name': 'Yavich',
+        'last_name': 'Yavich',
         'number': '89218702398'
     }
 };
@@ -40,26 +40,31 @@ let refreshDOMTable = () => {
         let currentRow = document.createElement('div');
         let currentId = document.createElement('div');
         let currentFirstName = document.createElement('div');
-        let currentSecondName = document.createElement('div');
+        let currentlastName = document.createElement('div');
         let currentNumber = document.createElement('div');
-        let currentDeleteBtn = document.createElement('div');
+        let currentDeleteBtn = document.createElement('form');
+        let currentDeleteBtnInside = document.createElement('input');
 
         currentRow.className = 'table-row';
         currentId.className = 'id';
         currentFirstName.className = 'first-name';
-        currentSecondName.className = 'second-name';
+        currentlastName.className = 'last-name';
         currentNumber.className = 'number';
         currentDeleteBtn.className = 'delete';
+        currentDeleteBtn.action = 'database/synchronize.php';
+        currentDeleteBtnInside.type = 'submit';
+        currentDeleteBtnInside.value = '✘';
 
         currentId.innerHTML = tableKeys[i];
         currentFirstName.innerHTML = table[tableKeys[i]].first_name;
-        currentSecondName.innerHTML = table[tableKeys[i]].second_name;
+        currentlastName.innerHTML = table[tableKeys[i]].last_name;
         currentNumber.innerHTML = table[tableKeys[i]].number;
-        currentDeleteBtn.innerHTML = '<input type="button" value="&#10008;">';
+
+        currentDeleteBtn.appendChild(currentDeleteBtnInside)
 
         currentRow.appendChild(currentId);
         currentRow.appendChild(currentFirstName);
-        currentRow.appendChild(currentSecondName);
+        currentRow.appendChild(currentlastName);
         currentRow.appendChild(currentNumber);
         currentRow.appendChild(currentDeleteBtn);
 
@@ -78,7 +83,12 @@ let refreshDOMTable = () => {
 
 };
 
-let deletePersonFromTable = (id) => {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function deletePersonFromTable(id) {
+    await sleep(1);
     let tempTable = {};
     let tableKeys = Object.keys(table);
     for (let i = 0; i < tableKeys.length; ++i){
@@ -92,12 +102,12 @@ let deletePersonFromTable = (id) => {
     refreshDOMTable();
 };
 
-let addPersonToTable = (first_name, second_name, number) => {
-    if (first_name !== '' && second_name !== '' && number !== '') {
+let addPersonToTable = (first_name, last_name, number) => {
+    if (first_name !== '' && last_name !== '' && number !== '') {
         let tableKeys = Object.keys(table);
         table[tableKeys.length + 1] = {
             'first_name': first_name,
-            'second_name': second_name,
+            'last_name': last_name,
             'number': number
         };
 
@@ -135,19 +145,20 @@ let init = () => {
         newPersonSubmitBtn.addEventListener('click', key => {
 
             let newPersonFirstName = document.getElementById('new-first-name').value;
-            let newPersonSecondName = document.getElementById('new-second-name').value;
+            let newPersonlastName = document.getElementById('new-last-name').value;
             let newPersonNumber = document.getElementById('new-number').value;
 
-            addPersonToTable(newPersonFirstName, newPersonSecondName, newPersonNumber);
+            addPersonToTable(newPersonFirstName, newPersonlastName, newPersonNumber);
 
             document.getElementById('new-first-name').value = '';
-            document.getElementById('new-second-name').value = '';
+            document.getElementById('new-last-name').value = '';
             document.getElementById('new-number').value = '';
         });
         
         let clearCacheBtn = document.getElementById('clear-cache');
         clearCacheBtn.addEventListener('click', key => {
             deleteAllCookies();
+            init();
         });
 
         refreshDOMTable();

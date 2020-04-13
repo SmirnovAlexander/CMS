@@ -17,7 +17,7 @@
             <span class="table-row table-header">
                 <strong>Id</strong>
                 <strong>First name</strong>
-                <strong>Second name</strong>
+                <strong>Last name</strong>
                 <strong>Number</strong>
                 <strong>Delete</strong>
             </span>
@@ -38,8 +38,8 @@
                 </div>
 
                 <div class="enter-data">
-                    <label for="new-second-name">Second name:</label>
-                    <input type="text" class="new-second-name" placeholder="Enter second name..." id="new-second-name">
+                    <label for="new-last-name">Last name:</label>
+                    <input type="text" class="new-last-name" placeholder="Enter last name..." id="new-last-name">
                 </div>
                 
                 <div class="enter-data">
@@ -49,31 +49,35 @@
 
             </div>
 
-            <input type="submit" value="Add" id="new-person-submit">
+            <form action="database/synchronize.php">
+                <input type="submit" value="Add" id="new-person-submit">
+            </form>
         </div>
 
-        <div class="database">
-            <h2 id="title">Manage database:</h2>
+        <div class="management">
+            <div class="database">
+                <h2 id="title">Manage database:</h2>
 
-            <div class="database-buttons">
-                <form action="bd.php">
-                    <input class="db-button" type="submit" value="Create database" id="create-database">
-                </form>
+                <div class="database-buttons">
+                    <form action="database/create_table.php">
+                        <input class="db-button" type="submit" value="Create table" id="create-database">
+                    </form>
 
-                <form action="bd.php">
-                    <input class="db-button" type="submit" value="Delete database" id="delete-database">
-                </form>
+                    <form action="database/delete_table.php">
+                        <input class="db-button" type="submit" value="Delete table" id="delete-database">
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div class="cache">
-            <h2 id="title">Cache:</h2>
+            <div class="cache">
+                <h2 id="title">Cache:</h2>
 
-            <div class="cache-buttons">
-                <input class="cache-button" type="submit" value="Clear cache" id="clear-cache">
+                <div class="cache-buttons">
+                    <input class="cache-button" type="submit" value="Clear cache" id="clear-cache">
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
 </body>
