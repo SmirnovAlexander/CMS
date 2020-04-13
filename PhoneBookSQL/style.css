@@ -102,3 +102,22 @@ label {
     font-weight: bold;
     background-color: gold;
 }
+
+.cache {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.cache-button {
+    margin-top: 20px;
+    margin: 1rem;
+    align-self: center;
+    justify-content: center;
+    width: 130px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: gold;
+}

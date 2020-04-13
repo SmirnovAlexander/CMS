@@ -1,4 +1,5 @@
 let table;
+
 let tableExample = {
     1: {
         'first_name': 'Alexander',
@@ -72,6 +73,9 @@ let refreshDOMTable = () => {
             deletePersonFromTable(idToDelete);
         })
     }
+
+    document.cookie = "phone_book=" + JSON.stringify(table);
+
 };
 
 let deletePersonFromTable = (id) => {
@@ -101,8 +105,32 @@ let addPersonToTable = (first_name, second_name, number) => {
     }
 };
 
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
+
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? JSON.parse(matches[1]) : undefined;
+}
+
 let init = () => {
-        table = tableExample;
+        
+        if (getCookie("phone_book") == undefined) {
+            table = tableExample;
+        } else {
+            table = getCookie("phone_book");
+        }
+
         let newPersonSubmitBtn = document.getElementById('new-person-submit');
         newPersonSubmitBtn.addEventListener('click', key => {
 
@@ -115,6 +143,11 @@ let init = () => {
             document.getElementById('new-first-name').value = '';
             document.getElementById('new-second-name').value = '';
             document.getElementById('new-number').value = '';
+        });
+        
+        let clearCacheBtn = document.getElementById('clear-cache');
+        clearCacheBtn.addEventListener('click', key => {
+            deleteAllCookies();
         });
 
         refreshDOMTable();
