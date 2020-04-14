@@ -43,8 +43,7 @@ let refreshDOMTable = () => {
         let currentFirstName = document.createElement("div");
         let currentlastName = document.createElement("div");
         let currentNumber = document.createElement("div");
-        let currentDeleteBtn = document.createElement("form");
-        let currentDeleteBtnInside = document.createElement("input");
+        let currentDeleteBtn = document.createElement("button");
 
         currentRow.className = "table-row";
         currentId.className = "id";
@@ -52,16 +51,12 @@ let refreshDOMTable = () => {
         currentlastName.className = "last-name";
         currentNumber.className = "number";
         currentDeleteBtn.className = "delete";
-        currentDeleteBtn.action = "database/synchronize.php";
-        currentDeleteBtnInside.type = "submit";
-        currentDeleteBtnInside.value = "✘";
 
         currentId.innerHTML = tableKeys[i];
         currentFirstName.innerHTML = table[tableKeys[i]].first_name;
         currentlastName.innerHTML = table[tableKeys[i]].last_name;
         currentNumber.innerHTML = table[tableKeys[i]].number;
-
-        currentDeleteBtn.appendChild(currentDeleteBtnInside);
+        currentDeleteBtn.innerHTML = "✘";
 
         currentRow.appendChild(currentId);
         currentRow.appendChild(currentFirstName);
@@ -81,6 +76,7 @@ let refreshDOMTable = () => {
     }
 
     document.cookie = "phone_book=" + JSON.stringify(table);
+    database_management("sychronize");
 };
 
 function sleep(ms) {
