@@ -16,7 +16,7 @@ Below are listed all tasks with links and descriptions.
 ## Homework 2. 
 12.03.20
 
-[HTML, CSS, JQ, JS slides](slides/02_HTML_CSS_JQ_JS.pdf)
+[HTML, CSS, JS, JQ slides](slides/02_HTML_CSS_JS_JQ.pdf)
 
  - [2.1](PhoneBook/)
  
@@ -27,7 +27,7 @@ Below are listed all tasks with links and descriptions.
 
 [PHP, MySQL slides](slides/03_PHP_MySQL.pdf)
 
- - [3.1]()
+ - [3.1](PhoneBookSQL/)
 
     Upgrade previous homework (phone book) so it adds and deletes rows from database. Make table creation and deletion by pressing on appropriate button.
 
@@ -36,7 +36,7 @@ Below are listed all tasks with links and descriptions.
 
 [AJAX slides](slides/04_AJAX.pdf)
 
- - [4.1]()
+ - [4.1](PhoneBookAJAX/)
    
     Make phone book using AJAX technology.
 
@@ -48,3 +48,10 @@ Below are listed all tasks with links and descriptions.
  - [5.1]()
    
     Find website template (image) and make page using knows technologies.
+
+## Homework 6. 
+16.04.20
+
+ - [6.1]()
+
+    Make website from previous homework as wordpress template. Templates located in wp-content/themes/. Each folder match a template. You may re-do any existing template or create new from scratch. In root should be located files index.php, function.php, style.css. Usually template splits into elements: header.php, main.php, footer.php.
