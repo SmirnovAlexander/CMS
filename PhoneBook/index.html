@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Phone book</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Phone book</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <div class="wrapper">
+            <h1>Phone book</h1>
+            <div class="table-container" id="table-container">
+                <span class="table-row table-header">
+                    <strong>Id</strong>
+                    <strong>First name</strong>
+                    <strong>Second name</strong>
+                    <strong>Number</strong>
+                    <strong>Delete</strong>
+                </span>
 
-<body>
-
-    <div class="wrapper">
-
-        <h1>Phone book</h1>
-<div class="table-container" id="table-container">
-            <span class="table-row table-header">
-                <strong>Id</strong>
-                <strong>First name</strong>
-                <strong>Second name</strong>
-                <strong>Number</strong>
-                <strong>Delete</strong>
-            </span>
-
-            <span id="table-body"></span>
-        </div>
-
-
-        <div class="add-to-table">
-
-            <h2 id="title">Add to phone book:</h2>
-
-            <div class="add-fields">
-
-                <div class="enter-data">
-                    <label for="new-first-name">First name:</label>
-                    <input type="text" class="new-first-name" placeholder="Enter first name..." id="new-first-name">
-                </div>
-
-                <div class="enter-data">
-                    <label for="new-second-name">Second name:</label>
-                    <input type="text" class="new-second-name" placeholder="Enter second name..." id="new-second-name">
-                </div>
-                
-                <div class="enter-data">
-                    <label for="new-number">Number:</label>
-                    <input type="tel" class="new-number" placeholder="Enter number..." id="new-number">
-                </div>
-
+                <span id="table-body"></span>
             </div>
 
-            <input type="submit" value="Add" id="new-person-submit">
+            <div class="add-to-table">
+                <h2 id="title">Add to phone book:</h2>
+
+                <div class="add-fields">
+                    <div class="enter-data">
+                        <label for="new-first-name">First name:</label>
+                        <input
+                            type="text"
+                            class="new-first-name"
+                            placeholder="Enter first name..."
+                            id="new-first-name"
+                        />
+                    </div>
+
+                    <div class="enter-data">
+                        <label for="new-second-name">Second name:</label>
+                        <input
+                            type="text"
+                            class="new-second-name"
+                            placeholder="Enter second name..."
+                            id="new-second-name"
+                        />
+                    </div>
+
+                    <div class="enter-data">
+                        <label for="new-number">Number:</label>
+                        <input
+                            type="tel"
+                            class="new-number"
+                            placeholder="Enter number..."
+                            id="new-number"
+                        />
+                    </div>
+                </div>
+
+                <input type="submit" value="Add" id="new-person-submit" />
+            </div>
         </div>
-    </div>
+    </body>
 
-</body>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </html>
