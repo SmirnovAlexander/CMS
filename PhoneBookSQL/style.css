@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 body {
-    font-family: 'Open Sans', sans-serif;;
+    font-family: "Open Sans", sans-serif;
 }
 
 .wrapper {
@@ -35,14 +35,14 @@ body {
     border-bottom: 2px solid black;
 }
 
-input[type='button'] {
+input[type="button"] {
     width: 30px;
     height: 30px;
     color: red;
     font-size: 20px;
 }
 
-input[type='button']:focus {
+input[type="button"]:focus {
     box-shadow: 0 0 10px 5px lightgray;
 }
 
