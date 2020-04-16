@@ -55,3 +55,17 @@ Below are listed all tasks with links and descriptions.
  - [6.1]()
 
     Make website from previous homework as wordpress template. Templates located in wp-content/themes/. Each folder match a template. You may re-do any existing template or create new from scratch. In root should be located files index.php, function.php, style.css. Usually template splits into elements: header.php, main.php, footer.php.
+
+## Homework 7. 
+30.04.20
+
+ - [7.1]()
+
+    Finish website from previous homework. Add some parsing functionality or any other functionality using known technologies. Make presentation. 
+
+## Homework 8. 
+07.05.20
+
+ - [8.1]()
+
+    Make telegram bot and present it.
