@@ -1,0 +1,83 @@
+.background1 {
+    background: url("images/background1.png") no-repeat center center fixed;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.heading {
+    color: #007765;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.delimeter {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.links {
+    display: flex;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.background2 {
+    background: url("images/background2.png") no-repeat center center fixed;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#team {
+    background-color: #eeeeee;
+}
+
+.members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-basis: 33%;
+}
+
+.member-pic {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+.name {
+    color: #007765;
+    font-weight: bold;
+}
+
+.role {
+    font-style: italic;
+}
